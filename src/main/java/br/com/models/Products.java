@@ -1,14 +1,13 @@
 package br.com.models;
 
 import java.io.Serializable;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class User implements Serializable{
+public class Products implements Serializable{
 	
 	private static final long SerialVersionUID = 1l;
 	
@@ -16,8 +15,8 @@ public class User implements Serializable{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	private String name;
-	private String email;
-	private String password;
+	private int quantities;
+	private String type;
 	
 	public long getId() {
 		return id;
@@ -31,16 +30,16 @@ public class User implements Serializable{
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getEmail() {
-		return email;
+	public int getQuantities() {
+		return quantities;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setQuantities(int quantities) {
+		this.quantities = quantities;
 	}
-	public String getPassword() {
-		return password;
+	public String getType() {
+		return type;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+	public void setType(String type) {
+		this.type = type;
 	}
 }
