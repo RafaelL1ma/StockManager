@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
 import br.com.models.User;
 import br.com.repository.UserRepository;
 
@@ -23,6 +25,13 @@ public class UserController {
 	@RequestMapping(value="/new-user", method=RequestMethod.POST)
 	public String save(User user) {
 		ur.save(user);
-		return "redirect:new-user";
+		return "redirect:list-user";
+	}
+	@RequestMapping(value="/list-user", method=RequestMethod.GET)
+		public ModelAndView listUser(){
+		ModelAndView mv = new ModelAndView("user/listUser");
+		Iterable<User> user = ur.findAll();
+		mv.addObject("user", user);
+		return mv;
 	}
 }
