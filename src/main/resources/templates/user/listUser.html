@@ -27,7 +27,9 @@
 		<tbody>
 			<tr th:each="user: ${user}">
 				<td><span th:text="${user.name}"></span></td>	
-				<td><span th:text="${user.email}"></span></td>
+				<td><span th:text="${user.email}"></span>
+				<a th:href="${(#mvc.url('UC#deleteUser').arg(0, user.id)).build()}"><i class="material-icons right">delete</i></a>
+				<a><i class="material-icons right">mode_edit</i></a></td>	
 			</tr>
 		</tbody>
 	</table>
