@@ -18,11 +18,11 @@ public class UserController {
 
 	@RequestMapping(value="/new-user", method=RequestMethod.GET)
 		public String cadastro() {
-		return "user/cadastroUser";
+		return "user/newUser";
 }
 	@RequestMapping(value="/new-user", method=RequestMethod.POST)
 	public String save(User user) {
 		ur.save(user);
-		return "redirect:newUser";
+		return "redirect:new-user";
 	}
 }
