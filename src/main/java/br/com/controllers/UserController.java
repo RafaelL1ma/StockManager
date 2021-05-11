@@ -17,7 +17,7 @@ public class UserController {
 	private UserRepository ur;
 
 	@RequestMapping(value = "/new-user", method = RequestMethod.GET)
-	public String cadastro() {
+	public String newUser() {
 		return "user/newUser";
 	}
 
@@ -41,4 +41,19 @@ public class UserController {
 		ur.delete(user);
 		return "redirect:list-user";
 	}
+	
+	@RequestMapping(value = "/update-user/{id}", method = RequestMethod.GET)
+	public ModelAndView updateUser(@PathVariable("id") long id) {
+		ModelAndView mv = new ModelAndView("user/updateUser");
+		User user = ur.findById(id);
+		mv.addObject("user", user);
+		return mv;
+	}
+	
+	@RequestMapping(value = "/update-user/{id}", method = RequestMethod.POST)
+	public String updateUserPost(@PathVariable("id") long id, User user) {
+		ur.save(user);
+		return "redirect:/list-user";
+	}
+	
 }

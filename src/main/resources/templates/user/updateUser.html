@@ -15,15 +15,15 @@
 <title>StockManager</title>
 </head>
 <body>
-	<h3>Cadastro de Usuários</h3>
+	<h3>Atualização de Usuário</h3>
 	<form class="container" method="post">
-	Nome: <input type="text" value="" name="name">
+	Nome: <input type="text" th:field="${user.name}" name="name">
 	<div class="row" >
 		<div class="input-field col s6">
-	Email: <input type="text" value="" name="email">
+	Email: <input type="text" th:field="${user.email}" name="email">
 		</div>
 		<div class="input-field col s6">
-	Senha: <input type="password" value="" name="password">
+	Senha: <input type="text" th:field="${user.password}" name="password">
 		</div>
 	</div>
 	<button class="waves-effect waves-light btn" type="submit">Salvar</button>
