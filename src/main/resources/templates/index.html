@@ -2,14 +2,28 @@
 <html xnlns:th="http://thymeleaf.org/"
 xnlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"> 
     <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>StockManager</title>
+    <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="css/stockManager.css"/>
+         <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <link href="navBar/navBar.html"/>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>StockManager</title>
     </head>
     <body>
-        <h1>Stock</h1>
-        <a href="new-user">Cadastrar Usuário</a>
-        <a href ="list-user">Listar Usuário</a>
-        </h3>
+    <nav>
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo">StockManager</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/">Página Inicial</a></li>
+        <li><a href="list-user">Listar Usuários</a></li>
+        <li><a href="new-user">Cadastro de Usuários</a></li>
+      </ul>
+    </div>
+  </nav>
     </body>
 </html>

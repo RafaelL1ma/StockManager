@@ -8,16 +8,31 @@
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="css/stockManager.css"/>
          <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <link href="navBar/navBar.html"/>
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <title>StockManager</title>
 </head>
 <body>
+
+ <nav>
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo">StockManager</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/">Página Inicial</a></li>
+        <li><a href="list-user">Listar Usuários</a></li>
+        <li><a href="new-user">Cadastro de Usuários</a></li>
+      </ul>
+    </div>
+  </nav>
+    <div class="center">
 	<h2>Lista de Usuários</h2>
 	<h3><a href="new-user" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Cadastrar Usuário</a></h3>	
-	<table border=1 class="container">
+	</div>
+	<table border= 1px class="container">
 		<thead>
 			<tr>
 				<th>NOME:</th>
