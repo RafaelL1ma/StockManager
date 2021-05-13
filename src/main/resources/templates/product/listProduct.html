@@ -33,26 +33,28 @@
 		</div>
 	</nav>
 	<div class="center">
-		<h2>Lista de Usuários</h2>
+		<h2>Lista de Produtos</h2>
 		<h3>
-			<a href="new-user" class="waves-effect waves-light btn"><i
-				class="material-icons left">add_circle_outline</i>Cadastrar Usuário</a>
+			<a href="new-product" class="waves-effect waves-light btn"><i
+				class="material-icons left">add_circle_outline</i>Cadastrar Produto</a>
 		</h3>
 	</div>
 	<table border=1px class="container">
 		<thead>
 			<tr>
 				<th>NOME:</th>
-				<th>EMAIL:</th>
+				<th>QUANTIDADE:</th>
+				<th>TIPO:</th>
 			</tr>
 		</thead>
 		<tbody>
-			<tr th:each="user: ${user}">
-				<td><span th:text="${user.name}"></span></td>
-				<td><span th:text="${user.email}"></span> <a
-					th:href="${(#mvc.url('UC#deleteUser').arg(0, user.id)).build()}"><i
+			<tr th:each="product: ${product}">
+				<td><span th:text="${product.name}"></span></td>
+				<td><span th:text="${product.quantities}"></span>
+				<td><span th:text="${product.type}"></span> <a
+					th:href="${(#mvc.url('PC#deleteProduct').arg(0, product.id)).build()}"><i
 						class="material-icons right">delete</i></a> <a
-					th:href="${(#mvc.url('UC#updateUser').arg(0, user.id)).build()}"><i
+					th:href="${(#mvc.url('PC#updateProduct').arg(0, product.id)).build()}"><i
 						class="material-icons right">mode_edit</i></a></td>
 			</tr>
 		</tbody>

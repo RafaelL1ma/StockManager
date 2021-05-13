@@ -35,11 +35,11 @@ public class UserController {
 		return mv;
 	}
 
-	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "delete-user/{id}", method = RequestMethod.GET)
 	public String deleteUser(@PathVariable("id") long id) {
 		User user = ur.findById(id);
 		ur.delete(user);
-		return "redirect:list-user";
+		return "redirect:/list-user";
 	}
 	
 	@RequestMapping(value = "/update-user/{id}", method = RequestMethod.GET)

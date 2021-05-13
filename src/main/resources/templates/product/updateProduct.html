@@ -9,17 +9,15 @@
 	rel="stylesheet" />
 <!--Import materialize.css-->
 <link type="text/css" rel="stylesheet"
-	href="materialize/css/materialize.min.css" media="screen,projection" />
-<link type="text/css" rel="stylesheet" href="css/stockManager.css" />
+	href="/materialize/css/materialize.min.css" media="screen,projection" />
+<link type="text/css" rel="stylesheet" href="/css/stockManager.css" />
 <!--Let browser know website is optimized for mobile-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link href="navBar/navBar.html" />
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <title>StockManager</title>
 </head>
 <body>
-
 	<nav>
 		<div class="nav-wrapper">
 			<a href="/" class="brand-logo">StockManager</a>
@@ -33,30 +31,25 @@
 		</div>
 	</nav>
 	<div class="center">
-		<h2>Lista de Usuários</h2>
-		<h3>
-			<a href="new-user" class="waves-effect waves-light btn"><i
-				class="material-icons left">add_circle_outline</i>Cadastrar Usuário</a>
-		</h3>
+		<h3>Atualização de Produto</h3>
 	</div>
-	<table border=1px class="container">
-		<thead>
-			<tr>
-				<th>NOME:</th>
-				<th>EMAIL:</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr th:each="user: ${user}">
-				<td><span th:text="${user.name}"></span></td>
-				<td><span th:text="${user.email}"></span> <a
-					th:href="${(#mvc.url('UC#deleteUser').arg(0, user.id)).build()}"><i
-						class="material-icons right">delete</i></a> <a
-					th:href="${(#mvc.url('UC#updateUser').arg(0, user.id)).build()}"><i
-						class="material-icons right">mode_edit</i></a></td>
-			</tr>
-		</tbody>
-	</table>
+	<form class="container" method="post">
+		<div class="row">
+			<div class="input-field col s6 offset-s3">
+				Nome: <input type="text" th:field="${product.name}" name="name">
+			</div>
+			<div class="input-field col s6 offset-s3">
+				Quantidade: <input type="number" th:field="${product.quantities}"
+					name="quantities">
+			</div>
+			<div class="input-field col s6 offset-s3">
+				Tipo: <input type="text" th:field="${product.type}" name="type">
+			</div>
+		</div>
+		<div class="center">
+			<button class="waves-effect waves-light btn" type="submit">Salvar</button>
+		</div>
+	</form>
 	<div id="space"></div>
 	<footer class="page-footer">
 		<div class="container">
@@ -76,6 +69,7 @@
 		</div>
 	</footer>
 	<!--JavaScript at end of body for optimized loading-->
-	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+	<script type="text/javascript" src="/materialize/js/materialize.min.js"></script>
+
 </body>
 </html>
