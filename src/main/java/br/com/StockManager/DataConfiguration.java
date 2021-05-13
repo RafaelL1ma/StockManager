@@ -18,7 +18,7 @@ public class DataConfiguration {
 	        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
 	        dataSource.setUrl("jdbc:mysql://localhost:3306/stock_db?useTimezone=true&serverTimezone=UTC&createDatabaseIfNotExist=true");
 	        dataSource.setUsername("root");
-	        dataSource.setPassword("balisacar96382980");
+	        dataSource.setPassword("icasa12345");
 	        return dataSource;
 	    }
 

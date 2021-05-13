@@ -2,3 +2,12 @@
 .nav-wrapper{
    background-color: #26a69a;
   }
+
+.page-footer{
+	background-color: #616161;
+}
+ 
+#space{
+	height: 250px;
+	
+}
